@@ -13,7 +13,11 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/users/:username", (req, res) => {
-    res.status(200).send(`You requested information about ${req.params.username}`)
+    res.status(200).send(`You requested information about ${req.params.username}`);
+});
+
+app.get("/:username/:project", (req, res) => {
+    res.status(200).send(`You requested information about ${req.params.project} created by ${req.params.username}`);
 });
 
 app.listen(port, () => {
