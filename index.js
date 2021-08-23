@@ -12,8 +12,10 @@ app.get("/about", (req, res) => {
     res.status(200).send("This is the about route");
 });
 
+// http://localhost/users/john?age=52
+
 app.get("/users/:username", (req, res) => {
-    res.status(200).send(`You requested information about ${req.params.username}`);
+    res.status(200).send(`You requested information about ${req.params.username}: ${req.query.age}`);
 });
 
 app.get("/:username/:project", (req, res) => {
